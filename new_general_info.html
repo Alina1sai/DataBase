@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление информации</title>
+</head>
+<body>
+    <h1>Добавление информации об образцах</h1>
+    <form method="POST">
+        <label for="id_taxonomy">Классификация:</label>
+        <select name="id_taxonomy" required>
+            {% for rank in ranks %}
+            <option value="{{ rank.id }}">{{ rank.Genus }} - {{ rank.Species }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="id_Cultivation_Methods">Методы культивирования:</label>
+        <select name="id_Cultivation_Methods" required>
+            {% for method in methods %}
+            <option value="{{ method.id }}">{{ method.Culture_Medium }} - {{ method.Growth_Temperature }} - {{ method.Cultivation_Time }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="id_Genomic_Data">Название файла с геномной последовательностью:</label>
+        <select name="id_Genomic_Data" required>
+            {% for data in genomic_data %}
+            <option value="{{ data.id }}">{{ data.Genomic_Sequence }} - {{ data.Sequence_File_Name }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="Organization">Организация:</label>
+        <input type="text" name="Organization" required><br>
+        <label for="Collection_Number">Номер в коллекции:</label>
+        <input type="text" name="Collection_Number" required><br>
+        <label for="Isolation_Date">Дата выделения:</label>
+        <input type="date" name="Isolation_Date" required><br>
+        <label for="Isolation_Place">Место выделения:</label>
+        <input type="text" name="Isolation_Place" required><br>
+        <label for="Isolation_Source">Источник выделения:</label>
+        <input type="text" name="Isolation_Source" required><br>
+        <input type="submit" value="Добавить">
+    </form>
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

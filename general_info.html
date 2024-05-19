@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Общая информация</title>
+</head>
+<body>
+    <h1>Общая информация</h1>
+    <a href="{{ url_for('new_general_info') }}">Добавить новую общую информацию</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Organization</th>
+                <th>Collection Number</th>
+                <th>Genus</th>
+                <th>Species</th>
+                <th>Isolation Date</th>
+                <th>Isolation Place</th>
+                <th>Isolation Source</th>
+                <th>Culture Medium</th>
+                <th>Growth Temperature</th>
+                <th>Cultivation Time</th>
+                <th>Genomic Sequence</th>
+                <th>Sequence File Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in general_info %}
+            <tr>
+                <td>{{ info.Organization }}</td>
+                <td>{{ info.Collection_Number }}</td>
+                <td>{{ info.taxonomy.Genus }}</td>
+                <td>{{ info.taxonomy.Species }}</td>
+                <td>{{ info.Isolation_Date.strftime('%Y-%m-%d') }}</td>
+                <td>{{ info.Isolation_Place }}</td>
+                <td>{{ info.Isolation_Source }}</td>
+                <td>{{ info.cultivation_methods.Culture_Medium }}</td>
+                <td>{{ info.cultivation_methods.Growth_Temperature }}</td>
+                <td>{{ info.cultivation_methods.Cultivation_Time }}</td>
+                <td>{{ info.genomic_data.Genomic_Sequence }}</td>
+                <td>{{ info.genomic_data.Sequence_File_Name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

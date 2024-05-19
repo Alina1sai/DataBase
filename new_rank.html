@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление классификации</title>
+</head>
+<body>
+    <h1>Добавление классификации</h1>
+    <form method="POST">
+        <label for="Kindom">Kindom:</label>
+        <input type="text" name="Kindom" required><br>
+        <label for="Phylum">Phylum:</label>
+        <input type="text" name="Phylum" required><br>
+        <label for="Class">Class:</label>
+        <input type="text" name="Class" required><br>
+        <label for="Order">Order:</label>
+        <input type="text" name="Order" required><br>
+        <label for="Family">Family:</label>
+        <input type="text" name="Family" required><br>
+        <label for="Genus">Genus:</label>
+        <input type="text" name="Genus" required><br>
+        <label for="Species">Species:</label>
+        <input type="text" name="Species" required><br>
+        <input type="submit" value="Добавить">
+    </form>
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

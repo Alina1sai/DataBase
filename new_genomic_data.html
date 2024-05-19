@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление геномных данных</title>
+</head>
+<body>
+    <h1>Добавление геномных данных образцов</h1>
+    <form method="POST">
+        <label for="Genomic_Sequence">Genomic Sequence:</label>
+        <select name="Геномная последовательность " required>
+            <option value="сырой геном">сырой геном</option>
+            <option value="полная реконструкция">полная реконструкция</option>
+            <option value="финальная сборка">финальная сборка</option>
+        </select><br>
+        <label for="Sequence_File_Name">Название файла с геномной последовательностью:</label>
+        <input type="text" name="Sequence_File_Name" required><br>
+        <input type="submit" value="Добавить">
+    </form>
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Классификация</title>
+</head>
+<body>
+    <h1>Классификация</h1>
+    <a href="{{ url_for('new_rank') }}">Добавить новую классификацию</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Kingdom</th>
+                <th>Phylum</th>
+                <th>Class</th>
+                <th>Order</th>
+                <th>Family</th>
+                <th>Genus</th>
+                <th>Species</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rank in ranks %}
+            <tr>
+                <td>{{ rank.Kindom }}</td>
+                <td>{{ rank.Phylum }}</td>
+                <td>{{ rank.Class }}</td>
+                <td>{{ rank.Order }}</td>
+                <td>{{ rank.Family }}</td>
+                <td>{{ rank.Genus }}</td>
+                <td>{{ rank.Species }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>
+

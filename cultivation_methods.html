@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Методы культивирования</title>
+</head>
+<body>
+    <h1>Методы культивирования</h1>
+    <a href="{{ url_for('new_cultivation_method') }}">Добавить новый метод культивирования</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Culture Medium</th>
+                <th>Growth Temperature</th>
+                <th>Cultivation Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for method in methods %}
+            <tr>
+                <td>{{ method.Culture_Medium }}</td>
+                <td>{{ method.Growth_Temperature }}</td>
+                <td>{{ method.Cultivation_Time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

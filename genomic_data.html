@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Геномные данные</title>
+</head>
+<body>
+    <h1>Геномные данные</h1>
+    <a href="{{ url_for('new_genomic_data') }}">Добавить новые геномные данные</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Genomic Sequence</th>
+                <th>Sequence File Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in genomic_data %}
+            <tr>
+                <td>{{ data.Genomic_Sequence }}</td>
+                <td>{{ data.Sequence_File_Name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

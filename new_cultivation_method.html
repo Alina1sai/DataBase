@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление метода культивирования</title>
+</head>
+<body>
+    <h1>Добавить новый метод культивирования</h1>
+    <form method="POST">
+        <label for="Culture_Medium">Среда:</label>
+        <input type="text" name="Culture_Medium" required><br>
+        <label for="Growth_Temperature">Температура:</label>
+        <input type="text" name="Growth_Temperature" required><br>
+        <label for="Cultivation_Time">Время:</label>
+        <input type="text" name="Cultivation_Time" required><br>
+        <input type="submit" value="Добавить">
+    </form>
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>
